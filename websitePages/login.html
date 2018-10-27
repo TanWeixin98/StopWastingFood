@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SWF Login Page</title>
+		<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			text-align: center;
+		}
+		form {
+			text-align: center;
+		}
+	
+		input[type=text], input[type=password] {
+			width: 25%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #cccccc;
+			box-sizing: border-box;
+		}	
+
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 15px 20px;
+			margin: 8px 0;
+			border: none;
+			cursor: pointer;
+			width: 25%;
+		}
+		
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("input").focus(function(){
+					$(this).css("background-color", "#dddddd");
+				});
+				$("input").blur(function(){
+					$(this).css("background-color", "#ffffff");
+				});
+				
+				$("button").hover(function() {
+
+					$(this).animate({opacity: 0.7}, 250);
+
+				}, function() {
+
+					$(this).animate({opacity: 1}, 250);
+
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Login</h1>
+		<div>
+			<form> 
+				<input type="text" name="username" placeholder="Username">
+				<br>
+				<input type="password" name="password" placeholder="Password">
+				<br>
+				<button type="submit">Login</button>
+				
+			</form>
+			<p>Don't have an account? Click <a href="signUp.html">here</a> to sign up.</p>
+		</div>
+	</body>
+
+</html>
