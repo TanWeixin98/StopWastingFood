@@ -1,7 +1,7 @@
 {
   "name": "dbconnection",
   "version": "1.0.0",
-  "description": "DB connection for website",
+  "description": "Website mysql serverside",
   "main": "databaseConnection.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "mysql": "^2.16.0"
   }
 }
