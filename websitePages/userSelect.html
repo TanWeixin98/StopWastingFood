@@ -6,7 +6,9 @@
 <style>
 body {
     font-family: "Comic Sans MS", cursive, sans-serif;
-}
+    color:white;
+    background-color: black;
+    }
    button {
   width: 200%;
   padding: 12px;
@@ -33,7 +35,7 @@ body {
   left: 50%;
   transform: translate(-50%);
   border: 2px solid #ddd;
-  height: 500px;
+  height: 475px;
 }
     .vl-innertext {
   position: absolute;
@@ -51,16 +53,15 @@ body {
 }
 .col2 {
   float: right;
-  width: 30%;
+  width: 50%;
   margin: auto;
-  padding: 0 70px;
-  margin-top: 250px;
+ 
 } 
     .image1 ,.image2{
   opacity: 1;
   display: block;
   width: 100%;
-  height: auto;
+  height:480px;
   transition: .5s ease;
   backface-visibility: hidden;
 }
@@ -70,7 +71,7 @@ body {
   position:absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-450%, 25%);
+  transform: translate(-425%, 25%);
   -ms-transform: translate(-50%, -50%);
   text-align:center;
 }
@@ -80,7 +81,7 @@ body {
   position:absolute;
   top: 50%;
   left: 50%;
-  transform: translate(150%, 25%);
+  transform: translate(125%, 25%);
   -ms-transform: translate(-50%, -50%);
   text-align:center;
 }
@@ -108,24 +109,25 @@ body {
 <div class="container">
     <div class="row">
       <h1 style="text-align:center">Welcome to StopWastingFood</h1>
-      <h3>Please choose:</h3>
+      
       <div class="vl">
-        <span class="vl-innertext">or</span>
+        <span class="vl-innertext" style="color: black">OR</span>
+          
       </div>
 
       <div class="col1">
           
         <img src="restpic.jpg" class="image1"   style="width:100%">   
         <div class="b1">
-            <button>Restuarant</button>
+            <button name="Rbutton" value="restaurant">Restaurant</button>
         </div>
       </div>
         
         
       <div class="col2">
-          <img src="homelessshelter.jpg" class="image2" style="width:100%">
+          <img src="homelessshelter2.jpg" class="image2" style="width:100%">
           <div class="b2">
-        <button>HomeLess Shelter</button>
+        <button name="Hbutton" value="homeless">Homeless Shelter</button>
           </div>
       </div>
     </div>
