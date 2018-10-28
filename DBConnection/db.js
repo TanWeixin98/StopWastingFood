@@ -32,7 +32,30 @@ app.use(function(req, res, next) {
         next();
         });
 app.post('/check_login',function(req,res){
-        
+         var userName = req.body.userName;
+         var password =req.body.password;
+         try{
+         mysql_pool.getConnection(function(err,connection){
+                //check foodshelter
+                mysql_pool.query("Insert into FoodShelter(userName, userPass,organizationName,address) values('"+userName+"','"+password+"','"+organizationName+"','"+address+"')",function(err2, rows, fields){
+                if(err2) console.log(err2);
+                console.log("successFood");
+                });
+                
+                //check restaurant
+                mysql_pool.query("Insert into Resaturant(userName,userPass,restaurantName,address, earnedPoint) values('"+userName+"','"+password+"','"+organizationName+"','"+address+"',0)",function(err2, rows, fields){
+                if(err2) console.log(err2);
+                console.log("successREs");
+                });
+                });
+         connection.release();
+         
+         }catch(err){
+         //invalid login input
+         console.log("fail");
+         connection.release();
+         throw err;
+         }
         });
 app.post('/sign_up',function(req,res){
          var userName =req.body.userName;
@@ -40,10 +63,6 @@ app.post('/sign_up',function(req,res){
          var organizationName=req.body.organizationName;
          var address =req.body.address;
          var place = req.body.place;
-//         req.on('data', function(chunk) {
-//                console.log(chunk);
-//
-//                });
          var isShelter;
         if(place=="Shelter"){
             isShelter=true;
@@ -52,11 +71,11 @@ app.post('/sign_up',function(req,res){
         }
          try{
             SignUp(userName,password.organizationName,address,isShelter);
-         }catch(err){console.log("fail");
-         
+         res.send(true);
+         }catch(err){
+         console.log("fail");
+         res.send(false);
          }
-         res.send('about');
-         
          });
 
 app.listen(8080,function(){
