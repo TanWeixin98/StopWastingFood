@@ -1,4 +1,4 @@
-create table Restaurant(
+create table `websiteSchema`.`Resaturant`(
 	userName char(25) primary key,
     userPass char(20),
     restaurantName char(30),
@@ -6,7 +6,7 @@ create table Restaurant(
     earnedPoint  int default 0
 );
 
-create table FoodShelter(
+create table `websiteSchema`.`FoodShelter`(
 	userName char(25) primary key ,
     userPass char(20) not null,
     organizationName char(30) not null,
