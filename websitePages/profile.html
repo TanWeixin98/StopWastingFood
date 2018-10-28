@@ -3,7 +3,31 @@
 <head>
 <title>Profile</title>
 <style>
+* {
+    box-sizing: border-box;
+}
 
+/* Create two unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.left {
+  width: 40%;
+}
+
+.right {
+  width: 60%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 .navbar {
     list-style-type: none;
     margin: 0;
@@ -32,6 +56,7 @@
 <body>
 
 <ul class = "navbar">
+	<li><a href="profile.html">Profile</a></li>
   <li><a href="RestaurantPage.html">Restaurants</a></li>
   <li><a href="FoodShelterPage.html">Homeless Shelters</a></li>
   <li><a href="#contact">Contact</a></li>
@@ -39,23 +64,21 @@
 </ul>
 
 <h1> Your Name </h1>
-
-
-<div class="split left">
-  <div class="centered">
-    <img src="img_avatar2.png" alt="Avatar woman">
-    <h2>Jane Flex</h2>
-    <p>Some text.</p>
+<div class="row">
+  <div class="column left">
+	<img src="https://articles-images.sftcdn.net/wp-content/uploads/sites/3/2016/01/wallpaper-for-facebook-profile-photo.jpg"
+	width=300px height=250px>
+    <h2>Points: 200</h2>
+  </div>
+  <div class="column right">
+	<h2>Phone Number: (718) 997-5000</h2>
+	<br>
+    <h2>Address: 65-21 Main St, Flushing, NY 11367</h2>
   </div>
 </div>
 
-<div class="split right">
-  <div class="centered">
-    <img src="img_avatar.png" alt="Avatar man">
-    <h2>John Doe</h2>
-    <p>Some text here too.</p>
-  </div>
-</div>
+
+
 
 
 </body>
