@@ -1,5 +1,4 @@
 
-
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
@@ -7,10 +6,9 @@ var con = mysql.createConnection({
                                  user: "root",
                                  password: "Tandolphin98"
                                  });
-window.onload=function(){
-var button = document.getElementById("sign_up_id"); // add id="my-button" into html
-button.addEventListener('click', SignUp);
-}
+
+con.connect(function(err){console.log("connected")});
+
 // check userName loging
 function login(userName,password,isShelter){
     try{
@@ -57,7 +55,7 @@ function SignUp(){
         console.log("success");
     }catch(err){
         //invalid login input
-        console.log(err);
+        console.log("fail");
     }
 }
 
