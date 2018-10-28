@@ -27,6 +27,7 @@ body {
     button:hover {
   background-color: green;
 }
+/*    The line in the middle*/
     .vl {
   position: absolute;
   left: 50%;
@@ -47,8 +48,6 @@ body {
   float: left;
   width: 50%;
   margin: auto;
-  
-  
 }
 .col2 {
   float: right;
@@ -57,7 +56,7 @@ body {
   padding: 0 70px;
   margin-top: 250px;
 } 
-    .image {
+    .image1 ,.image2{
   opacity: 1;
   display: block;
   width: 100%;
@@ -65,7 +64,7 @@ body {
   transition: .5s ease;
   backface-visibility: hidden;
 }
-    .middle {
+    .b1 {
   transition: .5s ease;
   opacity: 0;
   position:absolute;
@@ -75,15 +74,29 @@ body {
   -ms-transform: translate(-50%, -50%);
   text-align:center;
 }
+    .b2 {
+  transition: .5s ease;
+  opacity: 0;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(150%, 25%);
+  -ms-transform: translate(-50%, -50%);
+  text-align:center;
+}
 
-.container:hover .image {
+.col1:hover .image1 {
   opacity: 0.3;
 }
-    .container:hover .image {
+
+.col1:hover .b1 {
+  opacity: 1;
+}
+    .col2:hover .image2 {
   opacity: 0.3;
 }
 
-.container:hover .middle {
+.col2:hover .b2 {
   opacity: 1;
 }
 
@@ -102,17 +115,21 @@ body {
 
       <div class="col1">
           
-       <img src="restpic.jpg" alt="Avatar" class="image" style="width:100%">   
-    <div class="middle">
-    <button>Restuarant</button>
-  </div>
+        <img src="restpic.jpg" class="image1"   style="width:100%">   
+        <div class="b1">
+            <button>Restuarant</button>
         </div>
-      <div class="col2">
-          <img src="homelessshelter.jpg">
-        <button>HomeLess Shelter</button>
       </div>
-</div>
+        
+        
+      <div class="col2">
+          <img src="homelessshelter.jpg" class="image2" style="width:100%">
+          <div class="b2">
+        <button>HomeLess Shelter</button>
+          </div>
+      </div>
     </div>
+</div>
 
 </body>
 </html>
