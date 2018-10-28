@@ -120,19 +120,23 @@ body {
         <img src="restpic.jpg" class="image1"   style="width:100%">   
         <div class="b1">
 
-            <a href="signUp.html"><button name="Rbutton" value="restaurant">Restaurant</button></a>
+            <a href="signUp.html"><button  name="Rbutton" onclick="saveValue('restaurant');" value="restaurant">Restaurant</button></a>
         </div>
       </div> 
-        
-        
       <div class="col2">
           <img src="homelessshelter2.jpg" class="image2" style="width:100%">
           <div class="b2">
 
-              <a href="signUp.html"><button name="Hbutton" value="homeless">Homeless Shelter</button></a>
+              <a href="signUp.html"><button name="Hbutton" onclick="saveValue('homeless');" value="homeless">Homeless Shelter</button></a>
           </div>
       </div>
     </div>
 </div>
+    <script>
+    function saveValue(value){
+        localStorage.setItem('name',value);
+        
+    }
+    </script>
 </body>
 </html>
