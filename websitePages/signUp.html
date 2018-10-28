@@ -76,13 +76,18 @@ width: 100%;
 
 </head>
 
+<<<<<<< HEAD
 <body>
+=======
+<body onload="choose()">
+<form action="/action_page.php" style="border:1px solid #ccc">
+>>>>>>> be4ebe8011eb294b84f88946f0575fb2bacd21bd
   <div class="container">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 	<label for="name"><b>Who are you?</b></label> <br>
-    <input id="restaurant_id" type="radio" name="category" value="Restaurant" checked> Restaurant
+    <input id="restaurant_id" type="radio" name="category" value="Restaurant" checked = "true"> Restaurant
   <input id="shelter_id" type="radio" name="category" value="Shelter"> Shelter<br>
  <br>
   
@@ -114,6 +119,17 @@ width: 100%;
 
     </div>
   </div>
+<<<<<<< HEAD
 
+=======
+</form>
+<script>
+    function choose(){   
+        if(localStorage.getItem('name') == 'homeless'){
+            shelter_id.checked = true;  
+        }
+    }
+    </script>
+>>>>>>> be4ebe8011eb294b84f88946f0575fb2bacd21bd
 </body>
 </html>
