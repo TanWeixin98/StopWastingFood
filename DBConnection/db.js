@@ -71,10 +71,13 @@ app.post('/sign_up',function(req,res){
         }
          try{
             SignUp(userName,password.organizationName,address,isShelter);
-         res.send(true);
+            res.send(true);
+            console.log("passed")
+            console.log(res)
          }catch(err){
-         console.log("fail");
          res.send(false);
+         console.log("no passed")
+         console.log(res);
          }
          });
 
@@ -90,25 +93,29 @@ function SignUp(userName,password,organizationName,address,isShelter){
                 if(isShelter){
                 //insert into shelter
                 mysql_pool.query("Insert into FoodShelter(userName, userPass,organizationName,address) values('"+userName+"','"+password+"','"+organizationName+"','"+address+"')",function(err2, rows, fields){
-                          if(err2) console.log(err2);
+                        if(err2){
+                                 connection.release();
+                                 throw err2;
+                                 
+                                 }
                           console.log("successFood");
                           });
                 }else{
                 //insert into restaurant
                 
                 mysql_pool.query("Insert into Resaturant(userName,userPass,restaurantName,address, earnedPoint) values('"+userName+"','"+password+"','"+organizationName+"','"+address+"',0)",function(err2, rows, fields){
-                          if(err2) console.log(err2);
+                        if(err2){
+                                 connection.release();
+                                 throw err2;
+                        }
                           console.log("successREs");
                           });
                 }
-                console.log("success2")
-                });
-        connection.release();
 
+                });
     }catch(err){
         //invalid login input
-        console.log("fail");
-        connection.release();
+        console.log(err);
         throw err;
     }}
 

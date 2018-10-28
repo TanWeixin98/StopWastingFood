@@ -17,13 +17,13 @@ function sendSignUp(){
 
     http.onreadystatechange = function() {
         if(http.readyState == 4 && http.status == 200) {
-        }
+        alert(http.responseText);
     }
-    console.log(http.status);
+    }
 
     http.send(params);
-    console.log(http.response);
+
     if(http.responseText==true){
-        window.location.href = "login.html";
+        window.location.href = "../websitePages/login.html";
     }
 }
