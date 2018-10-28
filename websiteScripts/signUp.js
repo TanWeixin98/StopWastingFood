@@ -23,7 +23,7 @@ function sendSignUp(){
 
     http.send(params);
 
-    if(http.responseText==true){
+    
         window.location.href = "../websitePages/login.html";
-    }
+    
 }
