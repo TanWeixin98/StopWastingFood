@@ -1,13 +1,13 @@
 
 var mysql = require('mysql');
+var express = require('express');
+var app = express();
 
 var con = mysql.createConnection({
                                  host: "localhost",
                                  user: "root",
                                  password: "Tandolphin98"
                                  });
-
-con.connect(function(err){console.log("connected")});
 
 // check userName loging
 function login(userName,password,isShelter){
@@ -24,21 +24,28 @@ function login(userName,password,isShelter){
     }
 }
 
+app.get('/check_login',function(req,res){
+        
+        });
+app.get('/sign_up',function(req,res){
+        var isShelter;
+        if(req.query.place=="Shelter"){
+            isShelter=true;
+        }else{
+            isShelter=false
+        
+        }
+        try
+        SignUp(req.query.userName,req.query,req.query.password,req.query.organizationName,req.query.address,isShelter);
+        }catch(err){console.log("fail");}
+        });
 
+app.listen(8080,function(){
+           console.log('app listening on port 8080');
+           });
 
 //sign up
-function SignUp(){
-    var userName =document.getElementById("username_id").value;
-    var password =document.getElementById("psw_id").value;
-    var organizationName =document.getElementById("organization_name_id").value;
-    var address =document.getElementById("address_id").value;
-    var phoneNumber=document.getElementById("username_id").value;
-    var isShelter;
-    if(document.getElementById("restaurant_id").value=="Restaurant"){
-        isShelter=false;
-    }else if(document.getElementById("shelter_id").value=="Shelter"){
-        isShelter=true;
-    }
+function SignUp(userName,password,organizationName,address,isShelter){
     try{
     con.connect(function(err){
                 
@@ -56,6 +63,7 @@ function SignUp(){
     }catch(err){
         //invalid login input
         console.log("fail");
+        throw err;
     }
 }
 
