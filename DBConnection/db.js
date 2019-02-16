@@ -8,8 +8,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var mysql_pool  = mysql.createPool({
                                  host: "localhost",
                                  user: "root",
-                                 password: "",
-                                 database : ""
+                                 password: "password",
+                                 database : "database_name"
                                  });
 
 // check userName loging
